@@ -11,20 +11,23 @@
 		<link href="../include/css/main.css" rel="stylesheet">
 
 		<!-- 引用jQuery -->
-		<script src="../include/jQuery/jquery-3.2.0.js" ></script>
+		<script src="../include/plugin/jQuery/jquery-3.2.0.js" ></script>
 
 		<!-- 引用Bootstrap -->
-		<link href="../include/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<script src="../include/Bootstrap/js/bootstrap.min.js" ></script>
+		<link href="../include/plugin/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<script src="../include/plugin/Bootstrap/js/bootstrap.min.js" ></script>
+		<script src="../include/plugin/moment/moment.js" ></script>
 
 		<!-- 引入設定 -->
 		<script src="../include/js/config.js" ></script>
-
+		<script type="text/javascript">
+			$(function(){
+				drawClock();
+			});
+		</script>
 	</head>
 
 	<body>
-		<div class="col-md-2 single-list" id="demo-list"></div>
-		<div class="col-md-10 content" id="content"></div>
+		<div id="clock"></div>
 	</body>
-
 </html>
