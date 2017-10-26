@@ -9,5 +9,7 @@ body {
 }
 
 .content {
-
+	margin: 1% 1% 1% 1%;
+	background-color: white;
+	border-radius: 1em;
 }
