@@ -18,156 +18,97 @@
 		<script src="../include/plugin/Bootstrap/js/bootstrap.min.js" ></script>
 		<script src="../include/plugin/moment/moment.js" ></script>
 
+		<!-- Font Awesome -->
+		<link href="../include/css/fontawesome-all.min.css" rel="stylesheet">
+
 		<!-- 引用FullCalendar -->
 		<link href='../include/plugin/fullcalendar/fullcalendar.min.css' rel="stylesheet">
 		<script src="../include/plugin/fullcalendar/fullcalendar.js" ></script>
 		<script src="../include/plugin/fullcalendar/locale-all.js" ></script>
 
+		<!-- 引入自製套件 -->
+		<link href="../include/plugin/treeNode/css/treeNode.css" rel="stylesheet"></script>
+		<script src="../include/plugin/treeNode/js/treeNode.js"></script>
+
 		<!-- 引入設定 -->
 		<script src="../include/js/config.js" ></script>
+		<script src="../include/js/test.js" ></script>
 		<script type="text/javascript">
 			$(function(){
-				var events = [
-					    // {
-					    //   	title: '昨天的活動',
-					    //   	start: moment().subtract(1, 'days').format('YYYY-MM-DD')
-					    // },
-					    // {
-					    //   	title: '持續一周的活動',
-					    //   	start: moment().add(7, 'days').format('YYYY-MM-DD'),
-					    //   	end: moment().add(14, 'days').format('YYYY-MM-DD'),
-					    //   	color: 'lightBlue'
-					    // },
-					    {
-					      	title: 'A',
-					      	resourceId: 'a',
-					      	start: moment().add(-4, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-4, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "lightBlue"
-					    },
-					    {
-					      	title: 'A',
-					      	resourceId: 'a',
-					      	start: moment().add(-3, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-3, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "lightBlue"
-					    },
-					    {
-					      	title: 'A',
-					      	resourceId: 'a',
-					      	start: moment().add(-2, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-2, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "lightBlue"
-					    },
-					    {
-					      	title: 'A',
-					      	resourceId: 'a',
-					      	start: moment().add(-1, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-1, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "lightBlue"
-					    },
-					    {
-					      	title: 'A',
-					      	resourceId: 'a',
-					      	start: moment().add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "lightBlue"
-					    },
-					    {
-					      	title: 'B',
-					      	resourceId: 'b',
-					      	start: moment().add(-4, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-4, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "blue"
-					    },
-					    {
-					      	title: 'B',
-					      	resourceId: 'b',
-					      	start: moment().add(-3, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-3, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "blue"
-					    },
-					    {
-					      	title: 'B',
-					      	resourceId: 'b',
-					      	start: moment().add(-2, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-2, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "blue"
-					    },
-					    {
-					      	title: 'B',
-					      	resourceId: 'b',
-					      	start: moment().add(-1, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-1, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "blue"
-					    },
-					    {
-					      	title: 'B',
-					      	resourceId: 'b',
-					      	start: moment().add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "blue"
-					    },
-					    {
-					      	title: 'C',
-					      	resourceId: 'c',
-					      	start: moment().add(-4, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-4, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "gray"
-					    },
-					    {
-					      	title: 'C',
-					      	resourceId: 'c',
-					      	start: moment().add(-3, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-3, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "gray"
-					    },
-					    {
-					      	title: 'C',
-					      	resourceId: 'c',
-					      	start: moment().add(-2, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-2, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "gray"
-					    },
-					    {
-					      	title: 'C',
-					      	resourceId: 'c',
-					      	start: moment().add(-1, 'days').add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-1, 'days').add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "gray"
-					    },
-					    {
-					      	title: 'C',
-					      	resourceId: 'c',
-					      	start: moment().add(-8, 'hour').format('YYYY-MM-DD H:m'),
-					      	end: moment().add(-5, 'hour').format('YYYY-MM-DD H:m'),
-					      	color: "gray"
-					    }
-					];
-					console.log(events);
-				// $("#content").fullCalendar({
-				//     editable: true,
-				//     events: events
-				// });
+				// testFullCalendar();
+				//
+				// testMove();
 
-				$('#content').fullCalendar({
-					locale: 'zh-TW',
-					header: { left: "", center: "title", right: "today,prev,next" },
-				    defaultView: 'agendaWeek',
-				    resources: [
-				        { id: 'a', title: 'Room A', eventColor: "lightBlue" },
-				        { id: 'b', title: 'Room B', eventColor: "blue" },
-				        { id: 'c', title: 'Room C', eventColor: "gray" },
-				        { id: 'd', title: 'Room D', eventColor: "" }
-				    ],
-				    events: events
-				});
+				var div = $("<div>").prop("id", "element1").appendTo( $("#content") );
 
+				var options = {
+					data: [
+						{
+							id: 1,
+							text: "A",
+							child: [
+								{
+									id: 1,
+									text: "a",
+									child: []
+								},
+								{
+									id: 1,
+									text: "a",
+									child: [{
+									id: 1,
+									text: "a",
+									child: []
+								}]
+								},
+								{
+									id: 1,
+									text: "a",
+									child: []
+								}
+							]
+						},
+						{
+							id: 1,
+							text: "A",
+							child: [
+								{
+									id: 1,
+									text: "a",
+									child: []
+								}
+							]
+						},
+						{
+							id: 1,
+							text: "A",
+							child: [
+								{
+									id: 1,
+									text: "a",
+									child: []
+								},
+								{
+									id: 1,
+									text: "a",
+									child: []
+								}
+							]
+						}
+					]
+				}
+				// $(div).treeNode(options);
+				$(".menu").treeNode(options);
 			});
+
 		</script>
 	</head>
 
 	<body>
-		<div class="content" id="content"></div>
+		<nav class="nav"></nav>
+		<div class="menu"></div>
+		<div class="content" id="content">
+			<i class="fa fa-plus">
+		</div>
 	</body>
 </html>

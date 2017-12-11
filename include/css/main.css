@@ -8,8 +8,16 @@ body {
 
 }
 
-.content {
+.menu {
+	float: left;
+	width: 25%;
 	margin: 1% 1% 1% 1%;
 	background-color: white;
+}
+
+.content {
+	float: left;
+	width: 65%;
+	margin: 1% 1% 1% 1%;
 	border-radius: 1em;
 }
