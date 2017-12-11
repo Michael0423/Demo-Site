@@ -24,33 +24,41 @@
 	}
 
 	function _createTree( nodes, _root ) {
-		var nodeRoot = $("<div>").prop("id","node_area");
-		var nodeList = $("<ul>").prop("id", "node_root");
-		var expendedIcon = $("<i>").prop("id", "icon").addClass("expended-icon");
-		$(nodeRoot).append(expendedIcon, nodeList);
+		var nodeRoot = $("<ul>");
+
 		$(nodeRoot).appendTo( _root );
 
-		$.each(nodes, function(index, node) {
-			_createNode( node, nodeList );
+		$.each( nodes, function( index, node ) {
+			_createNode( node, nodeRoot );
 		});
-
-		return _root;
+		// return _root;
 	}
 
 	function _createNode ( node, nodeRoot ) {
-		var nodeId = ( node.id ) ? node.id : nodeCount;
-		var nodeElement = $("<li>").prop("id", nodeId );
+		var nodeElement = $("<li>");
+		var expendedIcon = $("<i>").addClass("fa fa-minus").hide();
+		var nodeName = $("<span>").text(node.text);
 
-		$(nodeElement).html( node.text );
-		$(nodeElement).appendTo( nodeRoot );
+		$(nodeElement).append( expendedIcon, nodeName );
+		$(nodeElement).appendTo(nodeRoot);
 
 		if( node.child.length > 0 ) {
+			$(expendedIcon).show();
+			_createTree( node.child, nodeElement );
 
-			nodeRoot = _createTree( node.child, nodeRoot );
+			// 縮合
+			$(expendedIcon).click( function () {
+				if( $(this).hasClass("fa-plus") ) {
+					$(this).removeClass("fa-plus").addClass("fa-minus");
 
+					$(this).siblings("ul").toggle(300);
+				} else {
+					$(this).removeClass("fa-minus").addClass("fa-plus");
+
+					$(this).siblings("ul").toggle(300);
+				}
+			});
 		}
-
-		return nodeRoot;
 	}
 
 })( jQuery );
