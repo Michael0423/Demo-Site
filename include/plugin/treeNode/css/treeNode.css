@@ -1,3 +1,25 @@
-ul {
+#treeNode-root {
+	margin-top: 10px;
+}
+
+.treeNode-ul {
 	list-style-type: none;
+	position: relative;
+	left: -5px;
+}
+
+.treeNode-li {
+	position: relative;
+	left: -10px;
+}
+
+.treeNode-li > .expand-icon {
+	position: relative;
+	left: -25px;
+	cursor: pointer;
+}
+
+.treeNode-li > .node-name {
+	margin-top: 5px;
+	cursor: pointer;
 }
