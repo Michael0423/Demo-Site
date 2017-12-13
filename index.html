@@ -42,7 +42,8 @@
 				var div = $("<div>").prop("id", "element1").appendTo( $("#content") );
 
 				var options = {
-					data: [
+					expandIcon_style: "caret",
+					nodes: [
 						{
 							id: 1,
 							text: "A",
@@ -50,7 +51,19 @@
 								{
 									id: 1,
 									text: "a",
-									child: []
+									child: [
+										{
+											id: 1,
+											text: "a",
+											child: [
+												{
+													id: 1,
+													text: "a",
+													child: []
+												}
+											]
+										}
+									]
 								},
 								{
 									id: 1,
@@ -95,7 +108,11 @@
 								}
 							]
 						}
-					]
+					],
+					click: function( nodeData, nodeElement ) {
+						console.log( nodeData, nodeElement );
+						$(nodeElement).find("span").css("background-color", "red");
+					}
 				}
 				// $(div).treeNode(options);
 				$(".menu").treeNode(options);

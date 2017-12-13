@@ -10,55 +10,88 @@
 		/* }										   */
 		/***********************************************/
 		var defaultOption = {
-			data: [], // The data array of tree node
-			// click: function() {} // The click event of node.
+			expandIcon_style: "tradition",
+			nodes: [], // The data array of tree node
+			click: function( nodeData, nodeElement ) {} // The click event of node.
 		};
 
-		this.options = $.extend( true, defaultOption, options );
+ 		// ["close-status". "open-status"]
+		this.expandIconStyle = {
+			"tradition" : ["fa-plus fa-xs", "fa-minus fa-xs"],
+			"caret" : ["fa-caret-right", "fa-caret-down"]
+		};
 
-		var _root = $("<div>").prop("id", "root");
+		// this.options = $.extend( true, defaultOption, options );
+		this.options = $.extend( defaultOption, options );
 
-		_createTree( this.options.data, _root );
+		var _root = $("<div>").prop("id", "treeNode-root");
+
+		_createTree( this.options.nodes, _root, this.expandIconStyle[this.options.expandIcon_style], this.options.click );
 
 		$(_root).appendTo(this);
 	}
 
-	function _createTree( nodes, _root ) {
-		var nodeRoot = $("<ul>");
+
+	function _createTree( nodes, _root, expandIconStyle, clickEvent ) {
+
+		var nodeRoot = $("<ul>").addClass("treeNode-ul");
 
 		$(nodeRoot).appendTo( _root );
 
 		$.each( nodes, function( index, node ) {
-			_createNode( node, nodeRoot );
+
+			_createNode( node, nodeRoot, expandIconStyle, clickEvent );
+
 		});
-		// return _root;
+
 	}
 
-	function _createNode ( node, nodeRoot ) {
-		var nodeElement = $("<li>");
-		var expendedIcon = $("<i>").addClass("fa fa-minus").hide();
-		var nodeName = $("<span>").text(node.text);
+	function _createNode ( node, nodeRoot, expandIconStyle, clickEvent ) {
 
-		$(nodeElement).append( expendedIcon, nodeName );
+		var nodeElement = $("<li>").addClass("treeNode-li");
+		var expandIcon = $("<i>").addClass("expand-icon").addClass("fa "+expandIconStyle[1]).hide();
+		var nodeName = $("<span>").addClass("node-name").text(node.text);
+
+		// $(nodeElement).append( expandIcon, nodeName );
+		$(nodeElement).append( nodeName, expandIcon );
 		$(nodeElement).appendTo(nodeRoot);
 
 		if( node.child.length > 0 ) {
-			$(expendedIcon).show();
-			_createTree( node.child, nodeElement );
+
+			$(expandIcon).show();
+			_createTree( node.child, nodeElement, expandIconStyle, clickEvent );
 
 			// 縮合
-			$(expendedIcon).click( function () {
-				if( $(this).hasClass("fa-plus") ) {
-					$(this).removeClass("fa-plus").addClass("fa-minus");
+			$(expandIcon).click( function () {
+
+				if( $(this).hasClass(expandIconStyle[0]) ) {
+
+					$(this).removeClass(expandIconStyle[0]).addClass(expandIconStyle[1]);
 
 					$(this).siblings("ul").toggle(300);
+
 				} else {
-					$(this).removeClass("fa-minus").addClass("fa-plus");
+
+					$(this).removeClass(expandIconStyle[1]).addClass(expandIconStyle[0]);
 
 					$(this).siblings("ul").toggle(300);
+
 				}
+
 			});
+
 		}
+
+		if( clickEvent ) {
+
+			$(nodeName).click( function () {
+
+				clickEvent( node, nodeElement );
+
+			});
+
+		}
+
 	}
 
 })( jQuery );
