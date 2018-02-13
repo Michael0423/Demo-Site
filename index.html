@@ -8,10 +8,10 @@
 
 		<title>Michael's Demo Site</title>
 
-		<link href="../include/css/main.css" rel="stylesheet">
-
 		<!-- 引用jQuery -->
 		<script src="../include/plugin/jQuery/jquery-3.2.0.js" ></script>
+		<script src="../include/plugin/jQuery/jQuery-ui/js/jquery-ui.js" ></script>
+		<link href="../include/plugin/jQuery/jQuery-ui/css/jquery-ui.css" rel="stylesheet"></script>
 
 		<!-- 引用Bootstrap -->
 		<link href="../include/plugin/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -30,100 +30,26 @@
 		<link href="../include/plugin/treeNode/css/treeNode.css" rel="stylesheet"></script>
 		<script src="../include/plugin/treeNode/js/treeNode.js"></script>
 
-		<!-- 引入設定 -->
-		<script src="../include/js/config.js" ></script>
-		<script src="../include/js/test.js" ></script>
-		<script type="text/javascript">
-			$(function(){
-				// testFullCalendar();
-				//
-				// testMove();
-
-				var div = $("<div>").prop("id", "element1").appendTo( $("#content") );
-
-				var options = {
-					expandIcon_style: "caret",
-					nodes: [
-						{
-							id: 1,
-							text: "A",
-							child: [
-								{
-									id: 1,
-									text: "a",
-									child: [
-										{
-											id: 1,
-											text: "a",
-											child: [
-												{
-													id: 1,
-													text: "a",
-													child: []
-												}
-											]
-										}
-									]
-								},
-								{
-									id: 1,
-									text: "a",
-									child: [{
-									id: 1,
-									text: "a",
-									child: []
-								}]
-								},
-								{
-									id: 1,
-									text: "a",
-									child: []
-								}
-							]
-						},
-						{
-							id: 1,
-							text: "A",
-							child: [
-								{
-									id: 1,
-									text: "a",
-									child: []
-								}
-							]
-						},
-						{
-							id: 1,
-							text: "A",
-							child: [
-								{
-									id: 1,
-									text: "a",
-									child: []
-								},
-								{
-									id: 1,
-									text: "a",
-									child: []
-								}
-							]
-						}
-					],
-					click: function( nodeData, nodeElement ) {
-						console.log( nodeData, nodeElement );
-						$(nodeElement).find("span").css("background-color", "red");
-					}
-				}
-				// $(div).treeNode(options);
-				$(".menu").treeNode(options);
-			});
-
-		</script>
+		<link href="../include/css/main.css" rel="stylesheet">
 	</head>
 
 	<body>
-		<nav class="nav"></nav>
+		<nav class="nav">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">關於本站</li>
+				<li class="nav-item">登入</li>
+			</ul>
+		</nav>
 		<div class="menu"></div>
 		<div class="content" id="content"></div>
 	</body>
+
+	<!-- 引入設定 -->
+	<script src="../include/js/config.js" ></script>
+	<script src="../include/js/test.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+
+		});
+	</script>
 </html>

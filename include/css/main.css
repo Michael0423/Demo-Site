@@ -1,6 +1,6 @@
 body {
-	/*background-color: #84C1FF;*/
-	background-image: url("../../src/imgs/bg.jpg");
+	background-color: #84C1FF;
+	/*background-image: url("../../src/imgs/bg.jpg");*/
 	background-size: 100%;
 }
 
@@ -10,7 +10,7 @@ body {
 
 .menu {
 	float: left;
-	width: 25%;
+	width: 100%;
 	margin: 1% 1% 1% 1%;
 	background-color: white;
 }
