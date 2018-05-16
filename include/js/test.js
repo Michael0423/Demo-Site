@@ -50,12 +50,7 @@ function testFullCalendar() {
 	      	end: moment().add(-3, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
 	    }
 	];
-	console.log(events);
-	// $("#content").fullCalendar({
-	//     editable: true,
-	//     events: events
-	// });
-	// events = [];
+	// console.log(events);
 	$('#content').fullCalendar({
 		// 語系
 		locale: 'zh-TW',
@@ -104,5 +99,87 @@ function testMove(){
 			left = left + (e.clientX - x0);
 			$(this).css("top",top).css("left",left);
 		}
+	});
+}
+
+// 測試可拖拉&編輯的行事曆
+function testEditorCalendar() {
+	var events = [
+		{
+	      	title: 'A會議',
+	      	// resourceId: 'c',
+	      	start: moment().add(-2, 'days').add(-8, 'hour').format('YYYY-MM-DD HH:mm'),
+	      	end: moment().add(-2, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
+	    },
+	    {
+	      	title: 'A會議',
+	      	// resourceId: 'a',
+	      	start: moment().add(-4, 'days').add(-8, 'hour').format('YYYY-MM-DD HH:mm'),
+	      	end: moment().add(-4, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
+	    },
+	    {
+	      	title: 'A會議',
+	      	// resourceId: 'b',
+	      	start: moment().add(-3, 'days').add(-8, 'hour').format('YYYY-MM-DD HH:mm'),
+	      	end: moment().add(-3, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
+	    },
+
+	    {
+	      	title: 'A會議',
+	      	// resourceId: 'd',
+	      	start: moment().add(-1, 'days').add(-8, 'hour').format('YYYY-MM-DD HH:mm'),
+	      	end: moment().add(-1, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
+	    },
+	    {
+	      	title: 'B會議',
+	      	// resourceId: 'b',
+	      	start: moment().add(-4, 'days').add(-8, 'hour').format('YYYY-MM-DD HH:mm'),
+	      	end: moment().add(-4, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
+	    },
+	    {
+	      	title: 'B會議',
+	      	// resourceId: 'c',
+	      	start: moment().add(-3, 'days').add(-8, 'hour').format('YYYY-MM-DD HH:mm'),
+	      	end: moment().add(-3, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
+	    },
+	    {
+	      	title: 'C會議',
+	      	// resourceId: 'a',
+	      	start: moment().add(-4, 'days').add(-8, 'hour').format('YYYY-MM-DD HH:mm'),
+	      	end: moment().add(-4, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
+	    },
+	    {
+	      	title: 'C會議',
+	      	// resourceId: 'c',
+	      	start: moment().add(-3, 'days').add(-8, 'hour').format('YYYY-MM-DD HH:mm'),
+	      	end: moment().add(-3, 'days').add(-5, 'hour').format('YYYY-MM-DD HH:mm')
+	    }
+	];
+	// console.log(events);
+	$('#content').fullCalendar({
+		// 語系
+		locale: 'zh-TW',
+		// 表頭配置
+		// title:日期, today:今日按鈕, prev:往前, next:往後, prevYear:前一年, nextYear:下一年
+		header: { left: "", center: "title", right: "today,prev,next" },
+		// 預設呈現
+	    defaultView: 'agendaWeek',
+	  	// 使否可編輯
+	  	editable: true,
+	  	// 拖移放置後執行
+	  	eventDrop: function( event, dayDelta, minuteDelta, allDay, revertFunc, jsEvent, ui, view ) {
+	  		console.log( "event:", event );
+	  		console.log( "dayDelta:", dayDelta);
+	  		console.log( "minuteDelta:", minuteDelta);
+	  		console.log( "allDay:", allDay);
+	  		console.log( "revertFunc:", revertFunc);
+	  		console.log( "jsEvent:", jsEvent);
+	  		console.log( "ui:", ui);
+	  		console.log( "view:", view);
+
+	  	},
+
+	    // 事件資料
+	  	events: events
 	});
 }
