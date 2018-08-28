@@ -1,0 +1,38 @@
+    .flowChart {
+        margin: 1% auto;
+        width: 80%;
+        text-align: center;
+    }
+
+    .ui-flow-layer {
+        margin: 1% auto;
+        padding: 1%;
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
+    .ui-flow-person {
+        text-align: center;
+    }
+
+    .ui-flow-person .person {
+        margin: 3px auto;
+        width: 30%;
+        display: inline-block;
+        border: 1px solid black;
+    }
+
+    .ui-flow-layer .action-btn {
+        float: left;
+        position: relative;
+    }
+
+    .ui-flow-layer .add-layer-btn {
+        left: 5%;
+    }
+
+    .ui-flow-layer .delete-layer-btn,
+    .ui-flow-layer .add-person-btn  {
+        right: 1%;
+    }

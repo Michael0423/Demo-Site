@@ -35,22 +35,84 @@
 		<link href="../include/plugin/treeNode/css/treeNode.css" rel="stylesheet"></script>
 		<script src="../include/plugin/treeNode/js/treeNode.js"></script>
 
+		<link href="../include/plugin/workFlow/css/workFlow.css" rel="stylesheet"></script>
+		<script src="../include/plugin/workFlow/js/workFlow.js" type="text/javascript"></script>
+
+
 		<link href="../include/css/main.css" rel="stylesheet">
 
 		<style type="text/css">
-			.level {
+			#content {
 				margin: 5px auto;
 				width: 100%;
+				/*background-color: blue;*/
 			}
-			.card {
-				margin: 5px auto;
-				width: 30%;
-			}
+
 		</style>
 	</head>
 
 	<body>
 		<div id="content">
+			<div class="flowChart">
+				<div class="ui-flow-layer">
+					<div class="layer">第一層</div>
+					<div class="ui-flow-person">
+						<div class="person">
+							<span class="person-org">部門</span>
+							<span class="person-name">人名</span>
+						</div>
+					</div>
+					<div class="action-btn delete-layer-btn">
+						<i class="fa fa-trash"></i>
+					</div>
+					<div class="action-btn add-person-btn">
+						<i class="fa fa-user-plus"></i>
+					</div>
+					<div class="action-btn add-layer-btn">
+						<i class="fa fa-plus"></i>
+					</div>
+				</div>
+				<div class="ui-flow-layer">
+					<div class="layer">第二層</div>
+					<div class="ui-flow-person">
+						<div class="person">
+							<span class="person-org">部門</span>
+							<span class="person-name">人名</span>
+						</div>
+						<div class="person">
+							<span class="person-org">部門</span>
+							<span class="person-name">人名</span>
+						</div>
+					</div>
+					<div class="action-btn delete-layer-btn">
+						<i class="fa fa-trash"></i>
+					</div>
+					<div class="action-btn add-person-btn">
+						<i class="fa fa-user-plus"></i>
+					</div>
+					<div class="action-btn add-layer-btn">
+						<i class="fa fa-plus"></i>
+					</div>
+				</div>
+				<div class="ui-flow-layer">
+					<div class="layer">第三層</div>
+					<div class="ui-flow-person">
+						<div class="person">
+							<span class="person-org">部門</span>
+							<span class="person-name">人名</span>
+						</div>
+					</div>
+					<div class="action-btn delete-layer-btn">
+						<i class="fa fa-trash"></i>
+					</div>
+					<div class="action-btn add-person-btn">
+						<i class="fa fa-user-plus"></i>
+					</div>
+					<div class="action-btn add-layer-btn">
+						<i class="fa fa-plus"></i>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 
@@ -58,13 +120,20 @@
 	<script src="../include/js/config.js" ></script>
 	<script src="../include/js/test.js" ></script>
 	<script src="../include/js/googleChartTest.js" type="text/javascript"></script>
-	<script src="../include/js/workFlow.js" type="text/javascript"></script>
+
 	<script type="text/javascript">
 		$(function(){
 			// testEditorCalendar();
 			// lineChart();
 
-			$("#content").workFlow();
+			// $("#content").flowChart({
+			// 	data: [
+			// 		[{}],
+			// 		[{},{},{}],
+			// 		[{},{}],
+			// 		[{}]
+			// 	]
+			// });
 		});
 	</script>
 </html>
