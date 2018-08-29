@@ -1,15 +1,14 @@
     .flowChart {
-        margin: 1% auto;
-        width: 80%;
+        margin: 5px auto;
         text-align: center;
     }
 
     .ui-flow-layer {
-        margin: 1% auto;
-        padding: 1%;
-        width: 100%;
+        margin: 5px auto;
+        padding: 5px;
+        width: 80%;
         border: 1px solid black;
-        border-radius: 10px;
+        border-radius: 20px;
     }
 
     .ui-flow-person {
@@ -18,18 +17,27 @@
 
     .ui-flow-person .person {
         margin: 3px auto;
-        width: 30%;
+        width: 25%;
         display: inline-block;
         border: 1px solid black;
+        border-radius: 10px;
     }
 
     .ui-flow-layer .action-btn {
+        margin: 3px 3px auto;
         float: left;
         position: relative;
+        cursor: pointer;
     }
 
     .ui-flow-layer .add-layer-btn {
-        left: 5%;
+        left: calc( calc( 100% - 14% ) / 2 );
+        top: 3px;
+        font-size: 15px;
+        background-color: #F8D745;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
     }
 
     .ui-flow-layer .delete-layer-btn,
