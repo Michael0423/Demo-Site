@@ -4,20 +4,22 @@
     }
 
     .ui-flow-layer {
-        margin: 5px auto;
+        margin: 30px auto;
         padding: 5px;
-        width: 80%;
+        min-width: 500px;
+        max-width: 600px;
         border: 1px solid black;
-        border-radius: 20px;
+        border-radius: 10px;
     }
 
     .ui-flow-person {
+        margin: 3px auto;
         text-align: center;
     }
 
     .ui-flow-person .person {
-        margin: 3px auto;
-        width: 25%;
+        margin: 3px;
+        min-width: 100px;
         display: inline-block;
         border: 1px solid black;
         border-radius: 10px;
@@ -25,22 +27,16 @@
 
     .ui-flow-layer .action-btn {
         margin: 3px 3px auto;
-        float: left;
+        float: right;
         position: relative;
         cursor: pointer;
     }
 
     .ui-flow-layer .add-layer-btn {
-        left: calc( calc( 100% - 14% ) / 2 );
-        top: 3px;
         font-size: 15px;
         background-color: #F8D745;
         border-radius: 10px;
         width: 20px;
         height: 20px;
-    }
-
-    .ui-flow-layer .delete-layer-btn,
-    .ui-flow-layer .add-person-btn  {
-        right: 1%;
+        right: 50%;
     }
