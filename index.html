@@ -53,7 +53,7 @@
 
 	<body>
 		<div id="content">
-			<div class="flowChart">
+			<!-- <div class="flowChart">
 				<div class="ui-flow-layer">
 					<div class="layer">
 						<span>第一層</span>
@@ -96,10 +96,12 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="action-btn add-layer-btn">
 						<i class="fa fa-plus"></i>
 					</div>
+				</div>
+				<div class="ui-flow-line">
+					<div class="line"></div>
 				</div>
 				<div class="ui-flow-layer">
 					<div class="layer">
@@ -148,7 +150,57 @@
 						<i class="fa fa-plus"></i>
 					</div>
 				</div>
-			</div>
+				<div class="ui-flow-line">
+					<div class="line"></div>
+				</div>
+				<div class="ui-flow-layer">
+					<div class="layer">
+						<span>第一層</span>
+						<span>
+							<div class="action-btn delete-layer-btn">
+								<i class="fa fa-trash"></i>
+							</div>
+							<div class="action-btn add-person-btn">
+								<i class="fa fa-user-plus"></i>
+							</div>
+						</span>
+					</div>
+					<div class="ui-flow-person">
+						<div class="person">
+							<span class="person-org">部門</span>
+							<span class="person-name">人名</span>
+							<div class="action-btn delete-user-btn">
+								<i class="fa fa-trash-alt"></i>
+							</div>
+						</div>
+						<div class="person">
+							<span class="person-org">部門</span>
+							<span class="person-name">人名</span>
+							<div class="action-btn delete-user-btn">
+								<i class="fa fa-trash-alt"></i>
+							</div>
+						</div>
+						<div class="person">
+							<span class="person-org">部門</span>
+							<span class="person-name">人名</span>
+							<div class="action-btn delete-user-btn">
+								<i class="fa fa-trash-alt"></i>
+							</div>
+						</div>
+						<div class="person">
+							<span class="person-org">部門</span>
+							<span class="person-name">人名</span>
+							<div class="action-btn delete-user-btn">
+								<i class="fa fa-trash-alt"></i>
+							</div>
+						</div>
+					</div>
+
+					<div class="action-btn add-layer-btn">
+						<i class="fa fa-plus"></i>
+					</div>
+				</div>
+			</div> -->
 		</div>
 	</body>
 
@@ -162,14 +214,14 @@
 			// testEditorCalendar();
 			// lineChart();
 
-			// $("#content").flowChart({
-			// 	data: [
-			// 		[{}],
-			// 		[{},{},{}],
-			// 		[{},{}],
-			// 		[{}]
-			// 	]
-			// });
+			$("#content").flowChart({
+				flowData: [
+					[{ uid: 1, name: "Mike", org: "部門A" }],
+					[{ uid: 2, name: "麥克", org: "部門A" },{ uid: 3, name: "邁克", org: "部門B" },{ uid: 4, name: "大麥克", org: "部門C" }],
+					[{ uid: 4, name: "菜單", org: "部門A" }]
+				],
+				isEdit: true
+			});
 		});
 	</script>
 </html>

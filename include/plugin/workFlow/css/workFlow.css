@@ -3,13 +3,35 @@
         text-align: center;
     }
 
+    .root {
+        display: inline-block;
+        font-size: 15px;
+        background-color: #F8D745;
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+    }
+
     .ui-flow-layer {
-        margin: 30px auto;
+        margin: 15px auto;
         padding: 5px;
-        min-width: 500px;
         max-width: 600px;
+        min-height: 43px;
         border: 1px solid black;
         border-radius: 10px;
+    }
+
+    .ui-flow-line {
+        padding: 5px;
+    }
+
+    .ui-flow-line .line {
+        float: right;
+        position: relative;
+        right: 51%;
+        top: -20px;
+        border-right: 1px solid black;
+        height: 40px;
     }
 
     .ui-flow-person {
@@ -19,10 +41,20 @@
 
     .ui-flow-person .person {
         margin: 3px;
+        padding: 3px 3px 3px 3px;
         min-width: 100px;
         display: inline-block;
         border: 1px solid black;
         border-radius: 10px;
+    }
+
+    .ui-flow-person .person .person-org,
+    .ui-flow-person .person .person-name {
+        margin: 3px auto;
+    }
+
+    .ui-flow-person .person .person-org:: after {
+        content: '-';
     }
 
     .ui-flow-layer .action-btn {
