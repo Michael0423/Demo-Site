@@ -16,9 +16,14 @@
         margin: 15px auto;
         padding: 5px;
         max-width: 600px;
+        min-width: 150px;
         min-height: 43px;
         border: 1px solid black;
         border-radius: 10px;
+    }
+
+    .ui-flow-layer .layer {
+        min-width: 130px;
     }
 
     .ui-flow-line {
@@ -35,13 +40,13 @@
     }
 
     .ui-flow-person {
-        margin: 3px auto;
+        margin: 2px auto;
         text-align: center;
     }
 
     .ui-flow-person .person {
-        margin: 3px;
-        padding: 3px 3px 3px 3px;
+        margin: 5px;
+        padding: 2px 5px 2px 5px;
         min-width: 100px;
         display: inline-block;
         border: 1px solid black;
@@ -58,7 +63,7 @@
     }
 
     .ui-flow-layer .action-btn {
-        margin: 3px 3px auto;
+        margin: 1px 3px auto;
         float: right;
         position: relative;
         cursor: pointer;
