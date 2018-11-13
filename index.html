@@ -57,155 +57,48 @@
 
 	<body>
 		<div id="content">
-			<!-- <div class="flowChart">
+			<div class="flowChart">
 				<div class="ui-flow-layer">
 					<div class="layer">
-						<span>第一層</span>
-						<span>
-							<div class="action-btn delete-layer-btn">
+						<div>第一層</div>
+						<div class="ui-flow-btn-area">
+							<div class="ui-flow-btn pull-right delete-layer-btn">
 								<i class="fa fa-trash"></i>
 							</div>
-							<div class="action-btn add-person-btn">
+							<div class="ui-flow-btn pull-right add-person-btn">
 								<i class="fa fa-user-plus"></i>
 							</div>
-						</span>
+						</div>
 					</div>
 					<div class="ui-flow-person">
 						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
+							<div class="ui-flow-btn delete-user-btn">
+								<div class="pull-right">
+									<i class="fa fa-trash-o"></i>
+								</div>
 							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
+							<div>
+								<span class="person-org">部門</span>
+								<span class="person-name">人名</span>
 							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
+							<div>
+								<div class="ui-flow-btn pull-left select-btn">
+									<i class="fa fa-square-o"></i>
+								</div>
+								<div class="pull-right">需通過此人</div>
 							</div>
 						</div>
 					</div>
-					<div class="action-btn add-layer-btn">
+					<div class="ui-flow-btn pull-left add-layer-btn">
 						<i class="fa fa-plus"></i>
 					</div>
 				</div>
 				<div class="ui-flow-line">
 					<div class="line"></div>
 				</div>
-				<div class="ui-flow-layer">
-					<div class="layer">
-						<span>第一層</span>
-						<span>
-							<div class="action-btn delete-layer-btn">
-								<i class="fa fa-trash"></i>
-							</div>
-							<div class="action-btn add-person-btn">
-								<i class="fa fa-user-plus"></i>
-							</div>
-						</span>
-					</div>
-					<div class="ui-flow-person">
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-					</div>
-
-					<div class="action-btn add-layer-btn">
-						<i class="fa fa-plus"></i>
-					</div>
-				</div>
-				<div class="ui-flow-line">
-					<div class="line"></div>
-				</div>
-				<div class="ui-flow-layer">
-					<div class="layer">
-						<span>第一層</span>
-						<span>
-							<div class="action-btn delete-layer-btn">
-								<i class="fa fa-trash"></i>
-							</div>
-							<div class="action-btn add-person-btn">
-								<i class="fa fa-user-plus"></i>
-							</div>
-						</span>
-					</div>
-					<div class="ui-flow-person">
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-						<div class="person">
-							<span class="person-org">部門</span>
-							<span class="person-name">人名</span>
-							<div class="action-btn delete-user-btn">
-								<i class="fa fa-trash-alt"></i>
-							</div>
-						</div>
-					</div>
-
-					<div class="action-btn add-layer-btn">
-						<i class="fa fa-plus"></i>
-					</div>
-				</div>
-			</div> -->
+			</div>
 		</div>
+		<button id="send">確認</button>
 	</body>
 
 	<!-- 引入設定 -->
@@ -218,17 +111,26 @@
 			// testEditorCalendar();
 			// lineChart();
 
-			$("#content").flowChart({
+			var flowChart = $("#content").flowChart({
 				flowData: [
-					[{ uid: 1, name: "Mike", org: "部門A" }],
-					[{ uid: 2, name: "麥克", org: "部門A" },{ uid: 3, name: "邁克", org: "部門B" },{ uid: 4, name: "大麥克", org: "部門C" }],
-					[{ uid: 4, name: "菜單", org: "部門A" }]
+					[{ uid: 1, name: "Mike", org_id: 1, org_name: "部門A" }],
+					[{ uid: 2, name: "麥克", org_id: 1, org_name: "部門A" },{ uid: 3, name: "邁克", org_id: 2, org_name: "部門B" },{ uid: 4, name: "大麥克", org_id: 3, org_name: "部門C" }],
+					[{ uid: 4, name: "菜單", org_id: 1, org_name: "部門A" }]
 				],
 				userData: [
 					{ uid: 1, name: "Mike", org_id: 1, org_name: "部門A" },
-					{ uid: 2, name: "Mike2", org_id: 2, org_name: "部門B" }
+					{ uid: 2, name: "Mike2", org_id: 2, org_name: "部門B" },
+					{ uid: 3, name: "大麥克", org_id: 3, org_name: "部門C" }
 				],
-				isEdit: true
+				isEdit: false,
+				complete: function ( chartArea ) {
+					console.log(chartArea);
+				}
+			});
+
+			$("#send").click(function(){
+				var a = flowChart.getSettingData();
+				console.log(a);
 			});
 		});
 	</script>

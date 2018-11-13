@@ -5,11 +5,11 @@
 
     .root {
         display: inline-block;
-        font-size: 15px;
+        font-size: 24px;
         background-color: #F8D745;
-        border-radius: 10px;
-        width: 20px;
-        height: 20px;
+        border-radius: 15px;
+        width: 30px;
+        height: 30px;
     }
 
     .ui-flow-layer {
@@ -40,7 +40,7 @@
     }
 
     .ui-flow-person {
-        margin: 2px auto;
+        margin: 5px auto;
         text-align: center;
     }
 
@@ -58,14 +58,12 @@
         margin: 3px auto;
     }
 
-    .ui-flow-person .person .person-org:: after {
-        content: '-';
+    .ui-flow-person .person .person-org:after {
+        content: ' - ';
     }
 
-    .ui-flow-layer .action-btn {
-        margin: 1px 3px auto;
-        float: right;
-        position: relative;
+    .ui-flow-layer .ui-flow-btn {
+        margin: 1px 5px auto;
         cursor: pointer;
     }
 
@@ -75,5 +73,12 @@
         border-radius: 10px;
         width: 20px;
         height: 20px;
-        right: 50%;
+        position: relative;
+        left: 46%;
+        top: -5px;
+    }
+
+    .ui-flow-btn-area {
+        position: relative;
+        top: -20px;
     }
