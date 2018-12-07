@@ -116,11 +116,11 @@
                     var personIndex = $(this).parents(".person").index();
 
                     var isNeeded = false;
-                    if($(this).children("i").hasClass("fa-square-o")){
-                        $(this).children("i").removeClass("fa-square-o").addClass("fa-check-square-o");
+                    if($(this).find("i").hasClass("fa-square-o")){
+                        $(this).find("i").removeClass("fa-square-o").addClass("fa-check-square-o");
                         isNeeded = true;
                     }else{
-                        $(this).children("i").removeClass("fa-check-square-o").addClass("fa-square-o");
+                        $(this).find("i").removeClass("fa-check-square-o").addClass("fa-square-o");
                         isNeeded = false;
                     }
 
