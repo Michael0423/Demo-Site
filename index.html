@@ -8,130 +8,38 @@
 
 		<title>Michael's Demo Site</title>
 
-		<!-- 引用jQuery -->
-		<script src="../include/plugin/jQuery/jquery-3.2.0.js" ></script>
-		<script src="../include/plugin/jQuery/jQuery-ui/js/jquery-ui.js" ></script>
-		<link href="../include/plugin/jQuery/jQuery-ui/css/jquery-ui.css" rel="stylesheet"></script>
-
 		<!-- 引用Bootstrap -->
-		<link href="../include/plugin/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
-		<script src="../include/plugin/Bootstrap/js/bootstrap.min.js" ></script>
-
-		<!-- 引用Moment -->
-		<script src="../include/plugin/moment/moment.js" ></script>
-
-		<!-- Font Awesome 4.7 -->
-		<link href="../include/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-		<!-- google chart -->
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-		<!-- 引用FullCalendar -->
-		<link href='../include/plugin/fullcalendar/fullcalendar.min.css' rel="stylesheet">
-		<script src="../include/plugin/fullcalendar/fullcalendar.js" ></script>
-		<script src="../include/plugin/fullcalendar/locale-all.js" ></script>
-
-		<!-- 引入自製套件 -->
-		<link href="../include/plugin/treeNode/css/treeNode.css" rel="stylesheet"></script>
-		<script src="../include/plugin/treeNode/js/treeNode.js"></script>
-
-		<link href="../include/plugin/workFlow/css/workFlow.css" rel="stylesheet"></script>
-		<script src="../include/plugin/workFlow/js/workFlow.js" type="text/javascript"></script>
-		<script src="../include/plugin/workFlow/js/bsDialogSelect.js" type="text/javascript"></script>
-
-
-		<link href="../include/css/main.css" rel="stylesheet">
-
-		<!-- for bsDialogSelect -->
-		<!-- <link href="../include/css/main-content.css" rel="stylesheet"> -->
-
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		<style type="text/css">
-			#content {
-				margin: 5px auto;
-				width: 80%;
-				/*background-color: blue;*/
-			}
 
 		</style>
 	</head>
 
 	<body>
-		<div id="content">
-			<div class="flowChart">
-				<div class="ui-flow-layer">
-					<div class="layer">
-						<div>第一層</div>
-						<div class="ui-flow-btn-area">
-							<div class="ui-flow-btn pull-right delete-layer-btn">
-								<i class="fa fa-trash"></i>
-							</div>
-							<div class="ui-flow-btn pull-right add-person-btn">
-								<i class="fa fa-user-plus"></i>
-							</div>
-						</div>
-					</div>
-					<div class="ui-flow-person">
-						<div class="person">
-							<div class="ui-flow-btn delete-user-btn">
-								<div class="pull-right">
-									<i class="fa fa-trash-o"></i>
-								</div>
-							</div>
-							<div>
-								<span class="person-org">部門</span>
-								<span class="person-name">人名</span>
-							</div>
-							<div>
-								<div class="ui-flow-btn pull-left select-btn">
-									<i class="fa fa-square-o"></i>
-								</div>
-								<div class="pull-right">需通過此人</div>
-							</div>
-						</div>
-					</div>
-					<div class="ui-flow-btn pull-left add-layer-btn">
-						<i class="fa fa-plus"></i>
-					</div>
-				</div>
-				<div class="ui-flow-line">
-					<div class="line"></div>
-				</div>
-			</div>
+		<div class="container" id="content">
+			<div class="col">專案列表：</div>
+			<ul id="list"></ul>
 		</div>
-		<button id="send">確認</button>
+
+		<script type="text/javascript">
+			var prjList = [
+				{
+					name: "Vue.js",
+					url: "/Project/Vue/"
+				},
+				{
+					name: "精靈寶可夢圖鑑",
+					url: "/Project/Pokemon/"
+				}
+			];
+
+			for (var i = 0; i < prjList.length; i++) {
+				document.getElementById("list").innerHTML += "<li><a href='"+prjList[i].url+"'>"+prjList[i].name+"</a></li>";
+			}
+		</script>
 	</body>
 
-	<!-- 引入設定 -->
-	<script src="../include/js/config.js" ></script>
-	<script src="../include/js/test.js" ></script>
-	<script src="../include/js/googleChartTest.js" type="text/javascript"></script>
-
-	<script type="text/javascript">
-		$(function(){
-			// testEditorCalendar();
-			// lineChart();
-
-			var flowChart = $("#content").flowChart({
-				flowData: [
-					[{ uid: 1, name: "Mike", org_id: 1, org_name: "部門A" }],
-					[{ uid: 2, name: "麥克", org_id: 1, org_name: "部門A" },{ uid: 3, name: "邁克", org_id: 2, org_name: "部門B" },{ uid: 4, name: "大麥克", org_id: 3, org_name: "部門C" }],
-					[{ uid: 4, name: "菜單", org_id: 1, org_name: "部門A" }]
-				],
-				userData: [
-					{ uid: 1, name: "Mike", org_id: 1, org_name: "部門A" },
-					{ uid: 2, name: "Mike2", org_id: 2, org_name: "部門B" },
-					{ uid: 3, name: "大麥克", org_id: 3, org_name: "部門C" }
-				],
-				isEdit: false,
-				complete: function ( chartArea ) {
-					console.log(chartArea);
-				}
-			});
-
-			$("#send").click(function(){
-				var a = flowChart.getSettingData();
-				console.log(a);
-			});
-		});
-	</script>
 </html>
